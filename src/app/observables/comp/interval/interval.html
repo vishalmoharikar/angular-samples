@@ -1,0 +1,12 @@
+<button type="button" class="btn btn-primary sm  me-1" (click)="refresh()">Refresh</button>
+
+<h2>
+    Interval: {{ intervalStreamValue() }}
+    <button type="button" class="btn btn-danger" (click)="onUnsubscribe()">Unsubscribe</button>
+</h2>
+<hr>
+
+<h2>
+    Timer: {{ timerStreamValue() }}
+    <button type="button" class="btn btn-danger" (click)="onUnsubscribeTimer()">Unsubscribe</button>
+</h2>

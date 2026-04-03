@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Container } from './users/container/container';
+import { RxStreamsDemo } from './rxjs/rx-streams-demo/rx-streams-demo';
+import { Header } from './includes/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Container, RxStreamsDemo, RxStreamsDemo, Header, RouterOutlet, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

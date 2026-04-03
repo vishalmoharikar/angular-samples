@@ -1,0 +1,54 @@
+<button type="button" class="btn btn-primary btn-lg me-5" (click)="btnClick()">Emit to Subject</button>
+
+<h3>Subscription demo output</h3>
+@for (msg of messages; track msg) {
+<div>{{ msg }}</div>
+} @empty {
+<div>No events yet.</div>
+}
+
+<br />
+<hr>
+        <button type="button" class="btn btn-primary mb-3" (click)="unSubscribe()">Unsubscribe all Streams</button>
+
+<div class="d-flex flex-row align-items-start gap-5">
+    <div>
+        <h3>Of Stream</h3>
+
+        <input type="text" class="form-control mb-3" placeholder="Enter comma separated values for of stream"
+            [(ngModel)]="ofInputValue" />
+        <button type="button" class="btn btn-primary mb-3" (click)="emitOfStream()">Emit Of Stream</button>
+
+        <div>
+            @for (value of ofStreamValue(); track value) {
+            <div><strong>{{ value }}</strong></div>
+            } @empty {
+            <div>No values emitted yet.</div>
+            }
+        </div>
+    </div>
+    <div>
+        <h3>From Stream </h3>
+
+        <input type="text" class="form-control mb-3" placeholder="Enter comma separated values for of stream"
+            [(ngModel)]="fromInputValue" />
+        <button type="button" class="btn btn-primary mb-3" (click)="emitFromStream()">Emit From Stream</button>
+
+        <div>
+            @for (value of fromStreamValue(); track value) {
+            <div><strong>{{ value }}</strong></div>
+            } @empty {
+            <div>No values emitted yet.</div>
+            }
+        </div>
+    </div>
+
+    <div>
+        <h3>To Array </h3>
+        <input type="number" class="form-control mb-3" placeholder="number of values to emit from array stream"
+            [(ngModel)]="takeValue" />
+        <button type="button" class="btn btn-primary mb-3" (click)="emitFromArrayStream()">Emit From Array
+            Stream</button>
+    </div>
+
+</div>

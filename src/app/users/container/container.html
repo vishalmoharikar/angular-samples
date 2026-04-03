@@ -1,0 +1,7 @@
+<h2>User List</h2>
+
+<app-list [users]="users()" (selectUser)="handleUserSelection($event)">
+</app-list>
+
+<input type="text" placeholder="Search users..." [(ngModel)]="newUser">
+<button (click)="addUser()">Add User</button>
