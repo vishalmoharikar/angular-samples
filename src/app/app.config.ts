@@ -6,5 +6,8 @@ import { provideStore } from '@ngrx/store';
 import { cartReducer } from './ngrx/cart.reducer';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes), provideStore({ cart: cartReducer })],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes),
+    provideStore({ cart: cartReducer })],
 };
