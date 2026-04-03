@@ -1,7 +1,12 @@
-<ul>
-    @for (user of users();track user.id) {
-    <li (click)="onSelect(user)">
-        {{ user.name }}
-    </li>
-    }
-</ul>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">User list</h5>
+        <ul class="list-group list-group-flush">
+            @for (user of users(); track user.id) {
+            <li class="list-group-item list-group-item-action" (click)="onSelect(user)">
+                {{ user.name }}
+            </li>
+            }
+        </ul>
+    </div>
+</div>

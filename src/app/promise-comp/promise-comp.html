@@ -1,20 +1,16 @@
-<div class="my-4">
-    <h1>Promise Example</h1>
+<div class="card my-4">
+    <div class="card-body">
+        <h1 class="card-title">Promise Example</h1>
 
-    <button (click)="buyLaptop()">Buy Laptop (Promise)</button>
-    <br>
-    <p>{{ result ()}}</p>
-    <hr />
+        <button class="btn btn-primary me-2" (click)="buyLaptop()">Buy Laptop (Promise)</button>
+        <p class="mt-2">{{ result() }}</p>
+        <hr />
 
-    <button (click)="buyLaptopAsyncAwait()">Buy Laptop (Async/Await)</button>
-    <br>
-    <p>{{ resultAwait ()}}</p>
+        <button class="btn btn-primary me-2" (click)="buyLaptopAsyncAwait()">Buy Laptop (Async/Await)</button>
+        <p class="mt-2">{{ resultAwait() }}</p>
+        <hr />
 
-    <hr />
-
-    <button (click)="fetchData()">Fetch Data (Fetch)</button>
-    <br>
-    <p>{{ resultFetch ()}}</p>
-
-
+        <button class="btn btn-primary me-2" (click)="fetchData()">Fetch Data (Fetch)</button>
+        <p class="mt-2">{{ resultFetch() }}</p>
+    </div>
 </div>

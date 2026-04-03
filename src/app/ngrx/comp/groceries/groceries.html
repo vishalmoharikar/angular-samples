@@ -1,5 +1,10 @@
-<h3>Groceries</h3>
-
-<button class="btn-primary m-1" (click)="addRice()">Add Rice</button>
-<button class="btn-primary m-1" (click)="addMilk()">Add Milk</button>
-<button class="btn-primary m-1" (click)="addItemBySignal()">Add Groceries By Signal</button> 
+<div class="container mt-4">
+    <div class="card p-4 shadow-sm">
+        <h3 class="mb-3">Groceries</h3>
+        <div class="btn-toolbar">
+            <button class="btn btn-primary me-2" (click)="addRice()">Add Rice</button>
+            <button class="btn btn-primary me-2" (click)="addMilk()">Add Milk</button>
+            <button class="btn btn-success" (click)="addItemBySignal()">Add Groceries By Signal</button>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,12 @@
-<h3>Electronics</h3>
-
-<button class="btn-primary m-1" (click)="addLaptop()">Add Laptop</button>
-<button class="btn-primary m-1" (click)="addMobile()">Add Mobile</button>
-
-<button class="btn-primary m-1" (click)="addItemBySignal()">Add Electronic Item By Signal</button>
+<div class="container mt-4">
+    <div class="card p-4 shadow-sm">
+        <h3 class="mb-3">Electronics</h3>
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group me-2" role="group">
+                <button class="btn btn-primary" (click)="addLaptop()">Add Laptop</button>
+                <button class="btn btn-primary" (click)="addMobile()">Add Mobile</button>
+            </div>
+            <button class="btn btn-success" (click)="addItemBySignal()">Add Electronic Item By Signal</button>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,11 @@
-<h2>User List</h2>
+<div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-body">
+        <h2 class="card-title">User List</h2>
+        <app-list [users]="users()" (selectUser)="handleUserSelection($event)"></app-list>
 
-<app-list [users]="users()" (selectUser)="handleUserSelection($event)">
-</app-list>
-
-<input type="text" placeholder="Search users..." [(ngModel)]="newUser">
-<button (click)="addUser()">Add User</button>
+        <div class="input-group mt-3">
+            <input type="text" class="form-control" placeholder="Add user..." [(ngModel)]="newUser" />
+            <button class="btn btn-primary" (click)="addUser()">Add User</button>
+        </div>
+    </div>
+</div>

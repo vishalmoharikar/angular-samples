@@ -1,43 +1,46 @@
-<h2>RxJS Mapping Operators</h2>
+<div class="card my-4">
+    <div class="card-body">
+        <h2 class="card-title">RxJS Mapping Operators</h2>
+        <button class="btn btn-primary mb-3" (click)="trigger()">Trigger API Call</button>
 
-<button (click)="trigger()">Trigger API Call</button>
-
-<h3>switchMap (cancels previous)</h3>
+        <h3>switchMap (cancels previous)</h3>
 
 
-@for (v of switchLog; track v) {
-<div>
-    {{ v }}
+        @for (v of switchLog; track v) {
+        <div>
+            {{ v }}
+        </div>
+        } @empty {
+        <div>No logs available.</div>
+        }
+
+        <h3>mergeMap (parallel)</h3>
+
+
+        @for (v of mergeLog; track v) {
+        <div>
+            {{ v }}
+        </div>
+        } @empty {
+        <div>No logs available.</div>
+        }
+
+        <h3>concatMap (queue)</h3>
+        @for (v of concatLog; track v) {
+        <div>
+            {{ v }}
+        </div>
+        } @empty {
+        <div>No logs available.</div>
+        }
+
+        <h3>exhaustMap (ignores new)</h3>
+        @for (v of exhaustLog; track v) {
+        <div>
+            {{ v }}
+        </div>
+        } @empty {
+        <div>No logs available.</div>
+        }
+    </div>
 </div>
-} @empty {
-<div>No logs available.</div>
-}
-
-<h3>mergeMap (parallel)</h3>
-
-
-@for (v of mergeLog; track v) {
-<div>
-    {{ v }}
-</div>
-} @empty {
-<div>No logs available.</div>
-}
-
-<h3>concatMap (queue)</h3>
-@for (v of concatLog; track v) {
-<div>
-    {{ v }}
-</div>
-} @empty {
-<div>No logs available.</div>
-}
-
-<h3>exhaustMap (ignores new)</h3>
-@for (v of exhaustLog; track v) {
-<div>
-    {{ v }}
-</div>
-} @empty {
-<div>No logs available.</div>
-}

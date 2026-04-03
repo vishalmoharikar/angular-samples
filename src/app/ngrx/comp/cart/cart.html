@@ -1,27 +1,29 @@
-<h3>Cart</h3>
+<div class="container mt-4">
+    <div class="card p-4 mb-4 shadow-sm">
+        <h3 class="mb-3">Cart</h3>
 
-<div *ngFor="let item of (items$ | async)">
-    {{ item.name }} - ₹{{ item.price }} x {{ item.quantity }}
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center"
+                *ngFor="let item of (items$ | async)">
+                <span>{{ item.name }} - ₹{{ item.price }} x {{ item.quantity }}</span>
+                <button class="btn btn-sm btn-danger" (click)="remove(item.id)">Remove</button>
+            </li>
+        </ul>
 
-    <button (click)="remove(item.id)">Remove</button>
-</div>
-
-<h4>Total: ₹{{ total$ | async }}</h4>
-
-<button (click)="clear()">Clear Cart</button>
-
-<hr />
-
-<div class="bg-success-subtle">
-<h3>Cart using Signal</h3>
-    <div class="cart-icon">
-        Items: {{ cartService.count() }}
+        <h4 class="mb-3">Total: ₹{{ total$ | async }}</h4>
+        <button class="btn btn-warning" (click)="clear()">Clear Cart</button>
     </div>
 
-    @for (item of cartService.items(); track item.id) {
-    <p>{{ item.name }} - ₹{{ item.price }} x {{ item.quantity }}
-    </p>
-    }
+    <div class="card p-4 shadow-sm">
+        <h3 class="mb-3">Cart using Signal</h3>
+        <div class="alert alert-light">Items: {{ cartService.count() }}</div>
 
-    <h4>For Luxary Item: ₹{{ cartService.totalLuxury() }}</h4>
+        <ul class="list-group mb-3">
+            @for (item of cartService.items(); track item.id) {
+            <li class="list-group-item">{{ item.name }} - ₹{{ item.price }} x {{ item.quantity }}</li>
+            }
+        </ul>
+
+        <h4>For Luxury Item: ₹{{ cartService.totalLuxury() }}</h4>
+    </div>
 </div>

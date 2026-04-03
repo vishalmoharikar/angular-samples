@@ -1,43 +1,46 @@
-<h2>RxJS Stream Types</h2>
+<div class="card my-4">
+    <div class="card-body">
+        <h2 class="card-title">RxJS Stream Types</h2>
+        <button class="btn btn-primary mb-3" (click)="emit()">Emit Value</button>
 
-<button (click)="emit()">Emit Value</button>
+        <h3>Observable</h3>
 
-<h3>Observable</h3>
+        @for (v of observableLog; track v) {
+        <div>
+            {{ v }}
+        </div>
+        } @empty {
+        <div>No logs available.</div>
+        }
 
-@for (v of observableLog; track v) {
-<div>
-    {{ v }}
+        <h3>Subject</h3>
+        @for (v of subjectLog; track v) {
+        <div>
+            {{ v }}
+        </div>
+        } @empty {
+        <div>No logs available.</div>
+        }
+
+
+
+        <h3>BehaviorSubject</h3>
+        @for (v of behaviorLog; track v) {
+        <div>
+            {{ v }}
+        </div>
+        } @empty {
+        <div>No logs available.</div>
+        }
+
+
+        <h3>ReplaySubject (last 2)</h3>
+        @for (v of replayLog; track v) {
+        <div>
+            {{ v }}
+        </div>
+        } @empty {
+        <div>No logs available.</div>
+        }
+    </div>
 </div>
-} @empty {
-<div>No logs available.</div>
-}
-
-<h3>Subject</h3>
-@for (v of subjectLog; track v) {
-<div>
-    {{ v }}
-</div>
-} @empty {
-<div>No logs available.</div>
-}
-
-
-
-<h3>BehaviorSubject</h3>
-@for (v of behaviorLog; track v) {
-<div>
-    {{ v }}
-</div>
-} @empty {
-<div>No logs available.</div>
-}
-
-
-<h3>ReplaySubject (last 2)</h3>
-@for (v of replayLog; track v) {
-<div>
-    {{ v }}
-</div>
-} @empty {
-<div>No logs available.</div>
-}
