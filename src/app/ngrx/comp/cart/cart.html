@@ -9,3 +9,19 @@
 <h4>Total: ₹{{ total$ | async }}</h4>
 
 <button (click)="clear()">Clear Cart</button>
+
+<hr />
+
+<div class="bg-success-subtle">
+<h3>Cart using Signal</h3>
+    <div class="cart-icon">
+        Items: {{ cartService.count() }}
+    </div>
+
+    @for (item of cartService.items(); track item.id) {
+    <p>{{ item.name }} - ₹{{ item.price }} x {{ item.quantity }}
+    </p>
+    }
+
+    <h4>For Luxary Item: ₹{{ cartService.totalLuxury() }}</h4>
+</div>

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import * as CartSelectors from '../../cart.selectors';
 import * as CartActions from '../../cart.actions';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { CartService } from '../../service/cartservice';
 
 @Component({
   selector: 'app-cart',
@@ -14,6 +15,8 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 })
 export class Cart {
   private store = inject(Store);
+  cartService = inject(CartService);
+
 
   items$ = this.store.select(CartSelectors.selectCartItems);
   total$ = this.store.select(CartSelectors.selectCartTotal);
