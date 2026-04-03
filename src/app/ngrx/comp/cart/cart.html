@@ -1,0 +1,11 @@
+<h3>Cart</h3>
+
+<div *ngFor="let item of (items$ | async)">
+    {{ item.name }} - ₹{{ item.price }} x {{ item.quantity }}
+
+    <button (click)="remove(item.id)">Remove</button>
+</div>
+
+<h4>Total: ₹{{ total$ | async }}</h4>
+
+<button (click)="clear()">Clear Cart</button>
