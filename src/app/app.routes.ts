@@ -5,10 +5,11 @@ import { Observables } from './observables/observables';
 import { FromEvent } from './observables/comp/from-event/from-event';
 import { Interval } from './observables/comp/interval/interval';
 import { Container } from './users/container/container';
-import { Cart } from './ngrx/comp/cart/cart';
 import { Shopping } from './ngrx/shopping/shopping';
+import { SignalsComponent } from './signals-component/signals-component';
 
 export const routes: Routes = [
+    { path: 'signals', component: SignalsComponent },
     { path: 'components', component: Container },
     { path: 'ngRxStore', component: Shopping },
     { path: 'promise', component: PromiseComp },
