@@ -13,7 +13,7 @@ export const initialState: CartState = {
 export const cartReducer = createReducer(
     initialState,
 
-    on(CartActions.addToCart, (state, { item }) => {
+/*     on(CartActions.addToCart, (state, { item }) => {
         const existing = state.items.find(i => i.id === item.id);
 
         if (existing) {
@@ -31,7 +31,36 @@ export const cartReducer = createReducer(
             ...state,
             items: [...state.items, { ...item, quantity: 1 }]
         };
+    }), */
+
+
+    on(CartActions.addToCartSuccess, (state, { item }) => {
+        const existing = state.items.find(i => i.id === item.id);
+
+        return existing
+            ? {
+                ...state,
+                items: state.items.map(i =>
+                    i.id === item.id
+                        ? { ...i, quantity: i.quantity + 1 }
+                        : i
+                )
+            }
+            : {
+                ...state,
+                items: [...state.items, item]
+            };
     }),
+
+    on(CartActions.addToCartFailure, (state) => {
+        alert('Failed to add item to cart');
+        return {
+            ...state,
+            items: state.items
+        };
+    }), 
+
+
 
     on(CartActions.removeFromCart, (state, { id }) => ({
         ...state,

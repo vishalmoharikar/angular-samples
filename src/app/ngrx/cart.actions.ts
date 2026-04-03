@@ -6,6 +6,14 @@ export const addToCart = createAction(
     props<{ item: CartItem }>()
 );
 
+export const addToCartSuccess = createAction(
+    '[Cart] Add Item Success',
+    props<{ item: CartItem }>()
+);
+
+export const addToCartFailure = createAction(
+    '[Cart] Add Item Failure'
+);
 export const removeFromCart = createAction(
     '[Cart] Remove Item',
     props<{ id: number }>()

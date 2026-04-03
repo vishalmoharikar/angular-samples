@@ -4,10 +4,13 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { cartReducer } from './ngrx/cart.reducer';
+import { CartEffects } from './ngrx/cart.effects';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    provideStore({ cart: cartReducer })],
+    provideStore({ cart: cartReducer }),
+    provideEffects( [CartEffects])],
 };
