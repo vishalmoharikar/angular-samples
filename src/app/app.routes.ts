@@ -7,12 +7,14 @@ import { Interval } from './observables/comp/interval/interval';
 import { Container } from './users/container/container';
 import { Shopping } from './ngrx/shopping/shopping';
 import { SignalsComponent } from './signals-component/signals-component';
+import { UserComponent } from './rxjs/usercomponent/usercomponent';
 
 export const routes: Routes = [
     { path: 'signals', component: SignalsComponent },
     { path: 'components', component: Container },
     { path: 'ngRxStore', component: Shopping },
     { path: 'promise', component: PromiseComp },
+    { path: 'rxJs', component: UserComponent },
     {
         path: 'observable', component: Observables, children: [
             { path: 'from-event', component: FromEvent },

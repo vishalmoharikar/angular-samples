@@ -3,10 +3,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { Container } from './users/container/container';
 import { RxStreamsDemo } from './rxjs/rx-streams-demo/rx-streams-demo';
 import { Header } from './includes/header/header';
+import { UserComponent } from './rxjs/usercomponent/usercomponent';
 
 @Component({
   selector: 'app-root',
-  imports: [Container, RxStreamsDemo, RxStreamsDemo, Header, RouterOutlet, RouterLink],
+  imports: [UserComponent, Container, RxStreamsDemo, RxStreamsDemo, Header, RouterOutlet, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
